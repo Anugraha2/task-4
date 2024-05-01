@@ -1,0 +1,49 @@
+//Using anonymous function
+var arr = [1,12,11,3,4,5,12];
+var dup=function(arr){
+    var frequency = {};
+   
+    for(let i = 0; i < arr.length; i++) {
+       if(frequency[arr[i]]) {
+         frequency[arr[i]] = frequency[arr[i]] + 1;
+       } else {
+         frequency[arr[i]] = 1;
+       }
+    }
+   
+   let final = [];
+   for(let x in frequency) {
+     if(frequency[x] === 1) {
+       final.push(x);
+     }
+   }
+   
+   console.log(final); 
+   
+   };
+   dup(arr);
+   
+   
+   //Using IIFE
+   
+   (function (arr){
+     var frequency = {};
+   
+    for(let i = 0; i < arr.length; i++) {
+       if(frequency[arr[i]]) {
+         frequency[arr[i]] = frequency[arr[i]] + 1;
+       } else {
+         frequency[arr[i]] = 1;
+       }
+    }
+   
+   let final = [];
+   for(let x in frequency) {
+     if(frequency[x] === 1) {
+       final.push(x);
+     }
+   }
+   
+   console.log(final);   
+   })([1,2,3,4,4,5,6,7,5]);
+   
